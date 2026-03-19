@@ -3,7 +3,6 @@
 # Define Autoencoder
 class DenoisingAutoencoder(nn.Module):
     def __init__(self):
-        # Include your code here
         super(DenoisingAutoencoder, self).__init__()
         self.encoder = nn.Sequential(
             nn.Conv2d(1, 16, kernel_size=3, stride=2, padding=1),
@@ -20,7 +19,6 @@ class DenoisingAutoencoder(nn.Module):
 
 
     def forward(self, x):
-        # Include your code here
         x = self.encoder(x)
         x = self.decoder(x)
         return x
@@ -34,7 +32,6 @@ optimizer = optim.Adam(model.parameters(), lr=1e-3)
 
 # Train the autoencoder
 def train(model, loader, criterion, optimizer, epochs=5):
-    # Include your code here
     model.train()
     for epoch in range(epochs):
         running_loss = 0.0
